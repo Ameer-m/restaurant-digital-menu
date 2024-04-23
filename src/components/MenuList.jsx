@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { getSelectedLanguage } from '../util/languageUtil';
 import { useLanguage } from '../context/LanguageContext';
 
-function MenuList({ category, menuItems }) {
+function MenuList({ category, category_ar, menuItems }) {
   const { language } = useLanguage();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,7 @@ function MenuList({ category, menuItems }) {
 
   return (
     <div className="p-4 max-w-screen-md mx-auto" style={{ maxWidth: '600px' }}>
-      <h2 className="text-2xl font-bold mb-4 text-left text-red-700 rtl:text-right" id={category}>{category}</h2>
+      <h2 className="text-2xl font-bold mb-4 text-left text-red-700 rtl:text-right" id={category}>{language === 'ar' ? category_ar: category}</h2>
       {menuItems.map((item, index) => (
         <div key={index} className="flex border-b last:border-none py-2" onClick={() => openModal(item)}>
       

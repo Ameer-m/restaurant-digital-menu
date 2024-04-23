@@ -40,7 +40,7 @@ function Banner({ backgroundImage, title, title_ar }) {
 
       {/* Main Title and Subtitle on the right (75%) */}
       <div className="w-3/4 text-left pl-6 rtl:text-right pr-6">
-        <h1 className="text-2xl font-bold mb-1 sm:text-xl">{language === 'ar' ? 'تي جي آي فرايداي':'TGI Fridays' }</h1>
+        <h1 className="text-2xl font-bold mb-1 sm:text-xl">{language === 'ar' ? 'تي جي أي فرايديز':'TGI Fridays' }</h1>
         <p className="text-lg sm:text-base">{language === 'ar' ? title_ar : title}</p>
       </div>
     </div>

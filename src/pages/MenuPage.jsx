@@ -98,7 +98,11 @@ export const MenuPage = () => {
       <div className="menu-content">
         {data.acf.Menus.map((categoryData, index) => (
           <div key={index} ref={menuRefs.current[categoryData.dm_menu_category]}>
-            <MenuList category={categoryData.dm_menu_category} menuItems={categoryData.dm_menu_item} />
+            <MenuList 
+              category={categoryData.dm_menu_category} 
+              category_ar={categoryData.dm_menu_category_ar}
+              menuItems={categoryData.dm_menu_item} 
+            />
           </div>
         ))}
       </div>
