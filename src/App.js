@@ -8,6 +8,7 @@ function App() {
     <LanguageProvider>
     <div className="bg-white">
       <MyRouter children={undefined} />
+      <p>some text</p>
     </div>
     </LanguageProvider>
   );
