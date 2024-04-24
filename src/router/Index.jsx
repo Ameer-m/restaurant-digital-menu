@@ -21,7 +21,7 @@ const Index = () => {
     <Router>
       <Routes>
         <CustomRoute path="/" element={<HomePage />} />
-        <CustomRoute path="/:slug" element={<MenuPage />} />
+        <CustomRoute path="/:slug/" element={<MenuPage />} />
         <CustomRoute path="/404" element={<NotFoundPage />} />
       </Routes>
     </Router>
