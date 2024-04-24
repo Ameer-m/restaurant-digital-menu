@@ -9,7 +9,8 @@ const Index = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/:slug/" element={<MenuPage />} strict/>
+        <Route path="/bahrain" element={<MenuPage />} />
+        <Route path="/:slug/" element={<MenuPage />} />
         <Route path="/404" element={<NotFoundPage />} /> {/* Catch-all route for 404 */}
       </Routes>
     </Router>
