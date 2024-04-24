@@ -1,29 +1,28 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { HomePage } from "../pages/HomePage";
 import { MenuPage } from "../pages/MenuPage";
 import NotFoundPage from "../pages/NotFoundPage"; // Import the NotFoundPage
 // import Loader from '../components/Loader';
 
-const RemoveTrailingSlash = () => {
-  const history = useHistory();
-  const location = useLocation();
+const CustomRoute = ({ path, element }) => {
+  const navigate = useNavigate();
 
-  if (location.pathname.endsWith('/') && location.pathname !== '/') {
-    const newPath = location.pathname.slice(0, -1);
-    history.replace(newPath);
-    return null;
+  if (path !== '/' && path.endsWith('/')) {
+    const newPath = path.slice(0, -1); // Remove the trailing slash
+    navigate(newPath, { replace: true }); // Replace the current URL without adding to history
+    return null; // Return null to prevent rendering anything
   }
 
-  return null;
+  return <Route path={path} element={element} />;
 };
 
 const Index = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/:slug" element={<MenuPage />}/>
-        <Route path="/404" element={<NotFoundPage />} /> {/* Catch-all route for 404 */}
+        <CustomRoute path="/" element={<HomePage />} />
+        <CustomRoute path="/:slug" element={<MenuPage />} />
+        <CustomRoute path="/404" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
