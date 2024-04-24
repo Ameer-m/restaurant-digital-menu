@@ -8,8 +8,8 @@ const Index = () => {
   return (
     <Router>
       <Routes>
+        <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/:slug/" element={<MenuPage />}/>
         <Route path="/:slug" element={<MenuPage />}/>
         <Route path="/404" element={<NotFoundPage />} /> {/* Catch-all route for 404 */}
       </Routes>
