@@ -6,7 +6,7 @@ import Loader from '../components/Loader';
 
 const Index = () => {
   return (
-    <Router>
+    <Router basename="/index.html">
       <Routes>
         <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
         <Route path="/" element={<HomePage />} />
