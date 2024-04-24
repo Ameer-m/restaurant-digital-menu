@@ -7,7 +7,7 @@ function App() {
   return (
     <LanguageProvider>
     <div className="bg-white">
-      <MyRouter children={undefined} />
+      <MyRouter />
     </div>
     </LanguageProvider>
   );
